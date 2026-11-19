@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran OSIS (Divos) & Ambalan (Askadewa)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">🛡️ Divos & Askadewa</div>
+        <button class="cart-btn" onclick="toggleCart()">
+            📋 Pilihan (<span id="cart-count">0</span>)
+        </button>
+    </header>
+
+    <!-- Banner -->
+    <section class="hero">
+        <h1>Pendaftaran OSIS (Divos) dan Ambalan (Askadewa)</h1>
+        <p>Bangun jiwa kepemimpinan, disiplin, kreativitas, dan pengabdian bersama organisasi sekolah.</p>
+    </section>
+
+    <!-- Filter & Pencarian -->
+    <div class="controls">
+        <div class="categories">
+            <button class="cat-btn active" onclick="filterMenu('semua', this)">Semua</button>
+            <button class="cat-btn" onclick="filterMenu('osis', this)">OSIS (Divos)</button>
+            <button class="cat-btn" onclick="filterMenu('ambalan', this)">Ambalan (Askadewa)</button>
+            <button class="cat-btn" onclick="filterMenu('khusus', this)">Bidang Khusus</button>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cari divisi / unit..." onkeyup="searchMenu()">
+        </div>
+    </div>
+
+    <!-- Daftar Divisi / Unit -->
+    <main class="container" id="menu-container">
+        <!-- Item akan dimuat lewat JavaScript -->
+    </main>
+
+    <!-- Modal Formulir Pendaftaran -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Formulir Pendaftaran</h2>
+                <button class="close-btn" onclick="toggleCart()">&times;</button>
+            </div>
+            
+            <div id="cart-items">
+                <p style="text-align: center; color: #777;">Belum ada divisi/unit yang dipilih.</p>
+            </div>
+
+            <div class="form-group">
+                <label>Nama Lengkap Siswa</label>
+                <input type="text" id="studentName" placeholder="Masukkan nama lengkap" required>
+            </div>
+            <div class="form-group">
+                <label>Kelas & Jurusan</label>
+                <input type="text" id="studentClass" placeholder="Contoh: X TKJ 1" required>
+            </div>
+            <div class="form-group">
+                <label>Alasan Bergabung / Motivasi</label>
+                <textarea id="studentReason" rows="2" placeholder="Tuliskan motivasi singkat kamu bergabung"></textarea>
+            </div>
+
+            <div class="total-section">
+                <span>Total Pilihan:</span>
+                <span id="cart-total">0 Unit/Divisi</span>
+            </div>
+
+            <button class="checkout-btn" onclick="checkout()">Kirim Pendaftaran</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Pendaftaran OSIS (Divos) & Ambalan (Askadewa)
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
